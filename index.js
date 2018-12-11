@@ -10,7 +10,7 @@ const port = process.env.PORT || 8080;
 const server = express();
 
 // on any GET request, look in public/ for the corresponding file
-server.get(express.static(public));
+server.use(express.static(public));
 
 // set up pathways to access a database 
 server.get('/api/database', (req, res) => {
